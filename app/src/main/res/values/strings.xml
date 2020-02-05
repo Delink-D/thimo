@@ -13,4 +13,8 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+
+    <string name="thimo_cia_agikuyu">Thimo cia agikuyu</string>
+    <string name="proverb_sentence">Proverb sentence</string>
+    <string name="a_bit_of_explanation">A bit of explanation</string>
 </resources>
