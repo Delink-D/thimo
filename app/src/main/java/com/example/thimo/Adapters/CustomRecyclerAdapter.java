@@ -1,17 +1,21 @@
 package com.example.thimo.Adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.thimo.R;
 import com.example.thimo.models.Thimo;
+import com.example.thimo.ui.dialog.FullScreenDialogFragment;
 
 import java.util.List;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAdapter.ProverbsViewHolder> {
@@ -43,27 +47,26 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
         return thimoUtils.size();
     }
 
-    public class ProverbsViewHolder extends RecyclerView.ViewHolder {
+    public class ProverbsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView proverb;
+        private Context context;
 
-        public ProverbsViewHolder(View itemView) {
+        public ProverbsViewHolder(final View itemView) {
             super(itemView);
 
+            context = itemView.getContext();
+            itemView.setOnClickListener(this);
             proverb = itemView.findViewById(R.id.txt_proverb);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                    Thimo thimo = (Thimo) view.getTag();
-
-                    Toast.makeText(view.getContext(), thimo.getProverb(), Toast.LENGTH_SHORT).show();
-
-                }
-            });
-
         }
 
+        @Override
+        public void onClick(View view) {
+            FragmentManager fragmentManager = ((AppCompatActivity)context).getSupportFragmentManager();
+            FullScreenDialogFragment newFragment = new FullScreenDialogFragment();
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+            newFragment.show(transaction, FullScreenDialogFragment.TAG);
+        }
     }
 }
