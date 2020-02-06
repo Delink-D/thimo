@@ -36,7 +36,12 @@ public class FullScreenDialogFragment extends DialogFragment {
 
         Toolbar toolbar = view.findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_close_white_24dp);
-//        toolbar.setNavigationOnClickListener(view1 -> cancelUpload());
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismiss();
+            }
+        });
         toolbar.setTitle("Thimo Dialog");
 
         // Inflate the layout for this fragment
