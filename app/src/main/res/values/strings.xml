@@ -19,4 +19,6 @@
     <string name="a_bit_of_explanation">A bit of explanation</string>
     <string name="menu_favourite">Favourite</string>
     <string name="menu_communicate">Communicate</string>
+    <string name="menu_previous">Previous</string>
+    <string name="menu_next">Next</string>
 </resources>

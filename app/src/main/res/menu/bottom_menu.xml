@@ -5,19 +5,20 @@
         android:id="@+id/action_previous"
         android:enabled="true"
         android:icon="@drawable/ic_action_navigate_before"
-        android:title="Previous"
+        android:title="@string/menu_previous"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/action_none"
         android:enabled="true"
         android:title=""
-        app:showAsAction="never"/>
+        app:showAsAction="never"
+        app:showAction="ifRoom"/>
 
     <item
         android:id="@+id/action_next"
         android:enabled="true"
         android:icon="@drawable/ic_action_navigate_next"
-        android:title="Next"
+        android:title="@string/menu_next"
         app:showAsAction="ifRoom" />
 </menu>
