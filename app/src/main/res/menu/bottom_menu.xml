@@ -10,10 +10,7 @@
 
     <item
         android:id="@+id/action_none"
-        android:enabled="true"
-        android:title=""
-        app:showAsAction="never"
-        app:showAction="ifRoom"/>
+        android:title=""/>
 
     <item
         android:id="@+id/action_next"
