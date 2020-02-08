@@ -42,7 +42,20 @@ public class FullScreenDialogFragment extends DialogFragment {
                 dismiss();
             }
         });
-        toolbar.setTitle("Thimo Dialog");
+        toolbar.setTitle(proverb);
+
+        commentRecyclerView = view.findViewById(R.id.comments_recycler_view);
+        layoutManager = new LinearLayoutManager(getActivity());
+        commentRecyclerView.setLayoutManager(layoutManager);
+
+        comments = new ArrayList<>();
+
+        // adding comments to comments array
+        comments.add(new Comment("John Doh", "Some cool comment about this proverb"));
+
+
+        mAdapter = new CommentsRecyclerAdapter(getActivity(), comments);
+        commentRecyclerView.setAdapter(mAdapter);
 
         // Inflate the layout for this fragment
         return view;
