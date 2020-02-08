@@ -17,4 +17,6 @@
     <string name="thimo_cia_agikuyu">Thimo cia agikuyu</string>
     <string name="proverb_sentence">Proverb sentence</string>
     <string name="a_bit_of_explanation">A bit of explanation</string>
+    <string name="menu_favourite">Favourite</string>
+    <string name="menu_communicate">Communicate</string>
 </resources>
