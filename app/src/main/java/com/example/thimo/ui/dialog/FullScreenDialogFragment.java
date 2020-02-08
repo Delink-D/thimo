@@ -57,6 +57,20 @@ public class FullScreenDialogFragment extends DialogFragment {
         mAdapter = new CommentsRecyclerAdapter(getActivity(), comments);
         commentRecyclerView.setAdapter(mAdapter);
 
+        // toggle the like icon
+        commentLikeLayout.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                if (!hasUserLiked) {
+                    hasUserLiked = true;
+                    commentLike.setImageResource(R.drawable.ic_favorite_liked_24dp);
+                } else {
+                    hasUserLiked = false;
+                    commentLike.setImageResource(R.drawable.ic_favorite_black_24dp);
+                }
+            }
+        });
+
         // Inflate the layout for this fragment
         return view;
     }
