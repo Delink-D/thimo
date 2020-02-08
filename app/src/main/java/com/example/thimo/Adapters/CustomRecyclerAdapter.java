@@ -64,6 +64,8 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
             FragmentManager fragmentManager = ((AppCompatActivity)context).getSupportFragmentManager();
             FullScreenDialogFragment newFragment = new FullScreenDialogFragment();
             FragmentTransaction transaction = fragmentManager.beginTransaction();
+            FullScreenDialogFragment.newInstance("Prover Sample");
+//            transaction.replace(R.id., newFragment);
             transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
             newFragment.show(transaction, FullScreenDialogFragment.TAG);
         }

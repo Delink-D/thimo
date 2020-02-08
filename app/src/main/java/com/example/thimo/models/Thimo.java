@@ -5,7 +5,7 @@ public class Thimo {
 
     public Thimo() {}
 
-    public  Thimo(String proverb) {
+    public Thimo(String proverb) {
         this.proverb = proverb;
     }
 

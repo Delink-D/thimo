@@ -7,7 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.thimo.Adapters.CustomRecyclerAdapter;
 import com.example.thimo.R;
 import com.example.thimo.models.Thimo;
+import com.example.thimo.ui.dialog.FullScreenDialogFragment;
 
 import java.util.ArrayList;
 import java.util.List;
