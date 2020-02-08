@@ -33,20 +33,9 @@ import java.util.Objects;
 public class FullScreenDialogFragment extends DialogFragment {
 
     public static String TAG = "FullScreenDialog";
-    RecyclerView commentRecyclerView;
-    RecyclerView.Adapter mAdapter;
-    RecyclerView.LayoutManager layoutManager;
-    List<Comment> comments;
 
-    // actions
-    LinearLayout commentLikeLayout;
-    ImageView commentLike;
-    Boolean hasUserLiked = false;
-
-    // share action
-    LinearLayout commentShareLayout;
-
-
+    private ImageView commentLike;
+    private Boolean hasUserLiked = false;
     private String proverb;
 
     public static FullScreenDialogFragment newInstance(String title) {
@@ -70,9 +59,11 @@ public class FullScreenDialogFragment extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_full_screen_dialog, container, false);
-        commentLikeLayout = view.findViewById(R.id.layout_like);
+        // actions
+        LinearLayout commentLikeLayout = view.findViewById(R.id.layout_like);
         commentLike = view.findViewById(R.id.comment_like);
-        commentShareLayout = view.findViewById(R.id.layout_share);
+        // share action
+        LinearLayout commentShareLayout = view.findViewById(R.id.layout_share);
 
         Toolbar toolbar = view.findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_close_white_24dp);
@@ -84,11 +75,11 @@ public class FullScreenDialogFragment extends DialogFragment {
         });
         toolbar.setTitle(proverb);
 
-        commentRecyclerView = view.findViewById(R.id.comments_recycler_view);
-        layoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView commentRecyclerView = view.findViewById(R.id.comments_recycler_view);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         commentRecyclerView.setLayoutManager(layoutManager);
 
-        comments = new ArrayList<>();
+        List<Comment> comments = new ArrayList<>();
 
         // adding comments to comments array
         comments.add(new Comment("John Doh", "Some cool comment about this proverb"));
@@ -96,7 +87,7 @@ public class FullScreenDialogFragment extends DialogFragment {
         comments.add(new Comment("John Doh", "Some cool comment about this proverb"));
         comments.add(new Comment("John Doh", "Some cool comment about this proverb"));
 
-        mAdapter = new CommentsRecyclerAdapter(getActivity(), comments);
+        RecyclerView.Adapter mAdapter = new CommentsRecyclerAdapter(getActivity(), comments);
         commentRecyclerView.setAdapter(mAdapter);
 
         // toggle the like icon
