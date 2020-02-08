@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/comment_holder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/comment_userImage"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/txt_userName"
+                android:textSize="20sp"
+                android:maxLines="1"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="John Doh"
+                android:textColor="@color/colorText"
+                android:layout_toEndOf="@+id/comment_userImage"
+                android:layout_toRightOf="@+id/comment_userImage"/>
+
+            <TextView
+                android:id="@+id/txt_comment"
+                android:textSize="14sp"
+                android:maxLines="2"
+                android:textColor="@color/colorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_userName"
+                android:text="Some comment about this proverb"
+                android:layout_alignStart="@+id/txt_userName" />
+
+        </RelativeLayout>
+
+    <View
+        android:id="@+id/singleRow"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#f2f2f2"/>
+
+</LinearLayout>
