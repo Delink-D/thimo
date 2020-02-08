@@ -21,4 +21,5 @@
     <string name="menu_communicate">Communicate</string>
     <string name="menu_previous">Previous</string>
     <string name="menu_next">Next</string>
+    <string name="comment_input">Write a comment</string>
 </resources>

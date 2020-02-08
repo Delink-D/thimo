@@ -12,13 +12,13 @@
 
             <ImageView
                 android:id="@+id/comment_userImage"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:src="@mipmap/ic_launcher" />
 
             <TextView
                 android:id="@+id/txt_userName"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:maxLines="1"
                 android:layout_marginTop="6dp"
                 android:layout_marginStart="8dp"
