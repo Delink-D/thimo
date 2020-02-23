@@ -66,7 +66,7 @@ public class FullScreenDialogFragment extends DialogFragment {
         LinearLayout commentShareLayout = view.findViewById(R.id.layout_share);
 
         Toolbar toolbar = view.findViewById(R.id.toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_close_white_24dp);
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
