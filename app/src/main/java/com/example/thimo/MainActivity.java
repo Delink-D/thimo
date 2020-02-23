@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 AddProverbDialogFragment newFragment = new AddProverbDialogFragment();
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
                 transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                transaction.replace(R.id.nav_host_fragment, newFragment).addToBackStack(null).commit();
+                newFragment.show(transaction, AddProverbDialogFragment.TAG);
             }
         });
 
