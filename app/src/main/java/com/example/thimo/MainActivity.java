@@ -3,6 +3,7 @@ package com.example.thimo;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.thimo.ui.dialog.AddProverbDialogFragment;
 import com.example.thimo.ui.favourite.FavouriteFragment;
 import com.example.thimo.ui.home.HomeFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -16,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -45,10 +47,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                AddProverbDialogFragment newFragment = new AddProverbDialogFragment();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                transaction.replace(R.id.nav_host_fragment, newFragment).addToBackStack(null).commit();
             }
         });
+
         drawer = findViewById(R.id.drawer_layout);
         setNavigationViewListener();
 
